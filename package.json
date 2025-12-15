@@ -1,0 +1,39 @@
+{
+	"name": "walleteprovider",
+	"private": true,
+	"version": "0.1.0",
+	"scripts": {
+		"dev": "pnpm -r dev",
+		"build": "pnpm -r build",
+		"start": "pnpm -r start",
+		"test": "pnpm -r test",
+		"lint": "pnpm -r lint",
+		"frontend:dev": "pnpm --filter frontend dev",
+		"frontend:build": "pnpm --filter frontend build",
+		"frontend:start": "pnpm --filter frontend start",
+		"frontend:preview": "pnpm --filter frontend preview",
+		"frontend:test": "pnpm --filter frontend test",
+		"frontend:lint": "pnpm --filter frontend lint",
+		"backend:dev": "pnpm --filter backend dev",
+		"backend:build": "pnpm --filter backend build",
+		"backend:start": "pnpm --filter backend start",
+		"backend:start:prod": "pnpm --filter backend start:prod",
+		"backend:test": "pnpm --filter backend test",
+		"backend:test:watch": "pnpm --filter backend test -- --watch",
+		"backend:lint": "pnpm --filter backend lint",
+		"fe": "pnpm frontend:dev",
+		"be": "pnpm backend:dev",
+		"fe:build": "pnpm frontend:build",
+		"be:build": "pnpm backend:build"
+	},
+	"pnpm": {
+		"overrides": {
+			"vite": "npm:rolldown-vite@7.2.5"
+		},
+		"ignoredBuiltDependencies": [
+			"@nestjs/core",
+			"msw",
+			"unrs-resolver"
+		]
+	}
+}
