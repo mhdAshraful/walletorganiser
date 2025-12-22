@@ -11,51 +11,78 @@ const MOCK_USER = {
 	email: "admin@example.com",
 	password: "password01",
 	recoveryCode: "123456",
-};
-
-let cardsDB = [
-	{
-		id: "card_01",
-		type: "Visa",
-		cardLast4: "4912",
-		brand: "Debit",
-		expiry: "12/24",
-		usage: 143,
-	},
-	{
-		id: "card_02",
-		type: "Mastercard",
-		cardLast4: "3746",
-		brand: "Credit",
-		expiry: "2/26",
-		usage: 443,
-	},
-	{
-		id: "card_03",
-		type: "Visa",
-		cardLast4: "6420",
-		brand: "Debit",
-		expiry: "1/27",
-		usage: 230,
-	},
-];
-
-const DASHBOARD_STATUS = {
-	totalSplits: 4,
-	groth: 4,
-	totalEarnings: 12450,
-	topMerchants: [
-		{ name: "The Artisan's Nook", value: 37, color: "#6366f1" },
-		{ name: "Chic Finds", value: 26, color: "#a855f7" },
-		{ name: "Modern Marvels", value: 21, color: "#0ea5e9" },
-		{ name: "Amazon", value: 9, color: "#22c55e" },
-		{ name: "Grameenphone", value: 7, color: "#eab308" },
+	cards: [
+		{
+			id: "card_01",
+			type: "Visa",
+			cardLast4: "4912",
+			brand: "Debit",
+			expiry: "12/24",
+			usage: 143,
+		},
+		{
+			id: "card_02",
+			type: "Mastercard",
+			cardLast4: "3746",
+			brand: "Credit",
+			expiry: "2/26",
+			usage: 443,
+		},
+		{
+			id: "card_03",
+			type: "Visa",
+			cardLast4: "6420",
+			brand: "Debit",
+			expiry: "1/27",
+			usage: 230,
+		},
 	],
-	recentOrders: [
-		{ id: "ORD-7X8Y9Z0A", cardLast4: "4912", currency: "AED", amount: 215 },
-		{ id: "ORD-7X8Y9Z0B", cardLast4: "3746", currency: "AED", amount: 289 },
-		{ id: "ORD-7X8Y9Z0C", cardLast4: "6420", currency: "AED", amount: 456 },
-	],
+	dashboardStatus: {
+		totalSplits: 24,
+		growthrate: 12,
+		totalEarnings: 12450,
+		topCards: [
+			{
+				id: "ORD-7X8Y9Z0A",
+				cardLast4: "4912",
+				currency: "AED",
+				frequency: 24,
+			},
+			{
+				id: "ORD-7X8Y9Z0B",
+				cardLast4: "3746",
+				currency: "USD",
+				frequency: 20,
+			},
+		],
+		topMerchants: [
+			{ name: "The Artisan's Nook", value: 37, color: "#6366f1" },
+			{ name: "Chic Finds", value: 26, color: "#a855f7" },
+			{ name: "Modern Marvels", value: 21, color: "#0ea5e9" },
+			{ name: "Amazon", value: 9, color: "#22c55e" },
+			{ name: "Grameenphone", value: 7, color: "#eab308" },
+		],
+		recentOrders: [
+			{
+				id: "ORD-7X8Y9Z0A",
+				cardLast4: "4912",
+				currency: "AED",
+				amount: 215,
+			},
+			{
+				id: "ORD-7X8Y9Z0B",
+				cardLast4: "3746",
+				currency: "AED",
+				amount: 289,
+			},
+			{
+				id: "ORD-7X8Y9Z0C",
+				cardLast4: "6420",
+				currency: "AED",
+				amount: 456,
+			},
+		],
+	},
 };
 
 export const handlers = [
@@ -128,7 +155,7 @@ export const handlers = [
 
 	http.get("api/dashboard", () => {
 		// If no card added, we show empty dashboard
-		if (cardsDB.length === 0) {
+		if (MOCK_USER.cards.length === 0) {
 			return HttpResponse.json({
 				emptyState: true,
 				status: null,
@@ -136,14 +163,8 @@ export const handlers = [
 		}
 		return HttpResponse.json({
 			emptyState: false,
-			status: DASHBOARD_STATUS,
-			user: MOCK_USER.name,
+			data: MOCK_USER.dashboardStatus,
 		});
-	}),
-
-	// --- CARDS: READ (Get all cards) ---
-	http.get("/api/cards", () => {
-		return HttpResponse.json(cardsDB);
 	}),
 
 	// --- CARDS: CREATE (Add a card) ---
@@ -158,14 +179,13 @@ export const handlers = [
 			id: `c${Date.now()}`, // Generate a random ID
 			type: newCardData.brand || "Visa",
 			cardLast4: newCardData.cardNumber.slice(-4), // Take last 4 digits
-            brand: "Debit", // Default for demo
-            expiry: newCardData.expiry, // Default expiry
+			brand: "Debit", // Default for demo
+			expiry: newCardData.expiry, // Default expiry
 			usage: 0, // New cards have 0 usage
 		};
 
 		// 3. "SAVE" it to our mock database array
-		cardsDB.push(newCard);
-
+		MOCK_USER.cards.push(newCard);
 		// 4. Return the new card so the UI can update
 		return HttpResponse.json(newCard, { status: 201 });
 	}),
@@ -175,10 +195,10 @@ export const handlers = [
 		const { id } = params;
 
 		// Remove the card from the array
-		const initialLength = cardsDB.length;
-		cardsDB = cardsDB.filter((card) => card.id !== id);
+		const initialLength = MOCK_USER.cards.length;
+		MOCK_USER.cards = MOCK_USER.cards.filter((card) => card.id !== id);
 
-		if (cardsDB.length === initialLength) {
+		if (MOCK_USER.cards.length === initialLength) {
 			return new HttpResponse(null, {
 				status: 404,
 				statusText: "Card not found",
