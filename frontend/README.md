@@ -118,3 +118,41 @@ npx tailwindcss init -p
 -  Notes:
    -  To add/modify mocks: edit `src/mocks/handlers.ts` and restart the dev server.
    -  If you encounter stale service worker behavior, open DevTools → Application → Service Workers and unregister old workers or clear site data.
+
+## shadcn/ui (integrate preset without losing files)
+
+This repo is an existing Vite + React app. To use a shadcn preset while keeping your current source files, generate/merge **config + deps**, not a brand-new scaffold over your app.
+
+### What’s wired up in this repo
+
+-  `components.json` (shadcn config)
+-  `tailwind.config.ts` (Tailwind content + dark mode)
+-  `src/global.css` (Tailwind v4 entry + shadcn-compatible tokens)
+-  `src/lib/utils.ts` (`cn()` helper used by shadcn components)
+
+### Add components (recommended)
+
+```bash
+pnpm dlx shadcn@latest add button
+```
+
+This will generate `src/components/ui/*` and install any required Radix packages per component.
+
+### If you want the exact preset output (stone/blue + maia)
+
+Safest workflow: generate the preset into an **empty temp folder** and then copy/merge the outputs into this repo.
+
+```bash
+cd frontend
+mkdir -p .shadcn-preset-tmp
+cd .shadcn-preset-tmp
+pnpm dlx shadcn@latest create --preset "https://ui.shadcn.com/init?base=radix&style=maia&baseColor=stone&theme=blue&iconLibrary=hugeicons&font=inter&menuAccent=subtle&menuColor=default&radius=medium&template=vite" --template vite
+```
+
+Copy/merge these from the temp project into `frontend/`:
+
+-  `components.json`
+-  `tailwind.config.*`
+-  CSS entry file (merge into `src/global.css`)
+-  `src/lib/utils.ts`
+-  dependency changes from temp `package.json`
