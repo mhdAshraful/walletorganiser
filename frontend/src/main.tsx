@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import { LoginForm } from "./components/LoginForm.tsx";
 import { SignupForm } from "./components/SignupForm.tsx";
 import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
+import Settings from "./components/NavSideBars/Settings.tsx";
 
 async function init() {
 	// Start MSW in development only so local API calls are intercepted.
@@ -26,7 +27,24 @@ async function init() {
 
 					{/* Protected routes */}
 					<Route element={<ProtectedRoute />}>
-						<Route path="/" element={<App />} />
+						<Route path="/" element={<App />}>
+							<Route
+								path="dashboard"
+								element={<> dashboard element</>}
+							/>
+							<Route path="cards" element={<> cards element</>} />
+							<Route path="orders" element={<> orders element</>} />
+							<Route path="/settings" element={<Settings />} />
+							<Route path="/support" element={<> support element</>} />
+							<Route
+								path="/notifications"
+								element={<> notifications element</>}
+							/>
+							<Route
+								path="/userprofile"
+								element={<> userprofile element</>}
+							/>
+						</Route>
 					</Route>
 				</Routes>
 			</BrowserRouter>

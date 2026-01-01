@@ -3,13 +3,8 @@ import {
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
-	SidebarMenuSub,
 } from "../ui/sidebar";
-import {
-	Collapsible,
-	CollapsibleContent,
-	CollapsibleTrigger,
-} from "../ui/collapsible";
+import { Collapsible, CollapsibleTrigger } from "../ui/collapsible";
 
 const SidebarContentComponent = ({
 	items,

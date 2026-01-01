@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "../ui/sidebar";
 
 export function SidebarHeadingComponent() {
@@ -5,7 +6,7 @@ export function SidebarHeadingComponent() {
 		<SidebarMenu>
 			<SidebarMenuItem>
 				<SidebarMenuButton size="sm" asChild>
-					<a href="/" className="">
+					<NavLink to="/">
 						<img
 							src="logo_icon.svg"
 							alt="CreditPool Logo"
@@ -14,7 +15,7 @@ export function SidebarHeadingComponent() {
 						<div>
 							<p className="font-normal text-xl">CreditPool</p>
 						</div>
-					</a>
+					</NavLink>
 				</SidebarMenuButton>
 			</SidebarMenuItem>
 		</SidebarMenu>
