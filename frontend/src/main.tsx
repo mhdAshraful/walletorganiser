@@ -3,10 +3,11 @@ import { createRoot } from "react-dom/client";
 import "./global.css";
 import App from "./App.tsx";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { LoginForm } from "./components/LoginForm.tsx";
-import { SignupForm } from "./components/SignupForm.tsx";
-import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
+import { LoginForm } from "./components/Login/LoginForm.tsx";
+import { SignupForm } from "./components/Login/SignupForm.tsx";
+import { ProtectedRoute } from "./components/Login/ProtectedRoute.tsx";
 import Settings from "./components/NavSideBars/Settings.tsx";
+import DashboardContent from "./components/Dashboard/DashboardContent.tsx";
 
 async function init() {
 	// Start MSW in development only so local API calls are intercepted.
@@ -22,26 +23,23 @@ async function init() {
 			<BrowserRouter>
 				<Routes>
 					{/* Public routes */}
-					<Route path="/login" element={<LoginForm />} />
-					<Route path="/signup" element={<SignupForm />} />
-
+					<Route path="login" element={<LoginForm />} />
+					<Route path="signup" element={<SignupForm />} />
+					<Route path="payment-preview" element={<> payment element</>} />
 					{/* Protected routes */}
 					<Route element={<ProtectedRoute />}>
 						<Route path="/" element={<App />}>
-							<Route
-								path="dashboard"
-								element={<> dashboard element</>}
-							/>
+							<Route index element={<DashboardContent />} />
 							<Route path="cards" element={<> cards element</>} />
 							<Route path="orders" element={<> orders element</>} />
-							<Route path="/settings" element={<Settings />} />
-							<Route path="/support" element={<> support element</>} />
+							<Route path="support" element={<> support element</>} />
+							<Route path="settings" element={<Settings />} />
 							<Route
-								path="/notifications"
+								path="notifications"
 								element={<> notifications element</>}
 							/>
 							<Route
-								path="/userprofile"
+								path="userprofile"
 								element={<> userprofile element</>}
 							/>
 						</Route>

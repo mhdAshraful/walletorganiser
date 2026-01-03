@@ -100,6 +100,15 @@ function EmailStep() {
 						Start paying with multiple cards online
 					</p>
 				</div>
+				<p className="text-muted-foreground text-center text-2xl">
+					{" "}
+					<span className="text-amber-500"> To login</span> You can use any{" "}
+					<span className="text-blue-400">username</span>And{" "}
+					<span className="text-blue-400"> password</span> from this link{" "}
+					<a href="https://dummyjson.com/users" target="_blank">
+						https://dummyjson.com/users
+					</a>
+				</p>
 
 				{/* Progress indicator */}
 				{/* <div className="flex justify-center gap-2">
@@ -203,11 +212,11 @@ function PasswordStep() {
 				</div>
 
 				{/* Progress indicator */}
-				<div className="flex justify-center gap-2">
+				{/* <div className="flex justify-center gap-2">
 					<div className="h-2 w-8 rounded-full bg-primary" />
 					<div className="h-2 w-8 rounded-full bg-primary" />
 					<div className="h-2 w-8 rounded-full bg-muted" />
-				</div>
+				</div> */}
 
 				<Field>
 					<FieldLabel htmlFor="password">Password</FieldLabel>
@@ -432,11 +441,11 @@ function NameStep() {
 				</div>
 
 				{/* Progress indicator */}
-				<div className="flex justify-center gap-2">
+				{/* <div className="flex justify-center gap-2">
 					<div className="h-2 w-8 rounded-full bg-primary" />
 					<div className="h-2 w-8 rounded-full bg-primary" />
 					<div className="h-2 w-8 rounded-full bg-primary" />
-				</div>
+				</div> */}
 
 				{error && (
 					<div className="rounded-md bg-destructive/10 p-3 text-center text-sm text-destructive">

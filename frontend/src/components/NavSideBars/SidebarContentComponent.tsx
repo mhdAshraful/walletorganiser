@@ -5,6 +5,7 @@ import {
 	SidebarMenuItem,
 } from "../ui/sidebar";
 import { Collapsible, CollapsibleTrigger } from "../ui/collapsible";
+import { NavLink } from "react-router";
 
 const SidebarContentComponent = ({
 	items,
@@ -19,10 +20,15 @@ const SidebarContentComponent = ({
 						<SidebarMenuItem>
 							<CollapsibleTrigger asChild>
 								<SidebarMenuButton tooltip={item.name}>
-									{item.icon && (
-										<img src={item.icon} alt={item.name} />
-									)}
-									<span>{item.name}</span>
+									<NavLink
+										to={item.link}
+										className="flex items-center gap-2"
+									>
+										{item.icon && (
+											<img src={item.icon} alt={item.name} />
+										)}
+										<span>{item.name}</span>
+									</NavLink>
 								</SidebarMenuButton>
 							</CollapsibleTrigger>
 						</SidebarMenuItem>

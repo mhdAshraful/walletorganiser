@@ -77,7 +77,7 @@ export const loginRequest = async (
 		transactions: MOCK_USER.transactions || [],
 		cards: (MOCK_USER.cards as Card[]) || [],
 		dashboardStatus: {
-			totalSplits: MOCK_USER.dashboardStatus?.totalSplits || 0,
+			totalSplits: MOCK_USER.dashboardStatus?.totalSplits || {},
 			growthrate: MOCK_USER.dashboardStatus?.growthrate || 0,
 			totalEarnings: MOCK_USER.dashboardStatus?.totalEarnings || 0,
 			topCards: (MOCK_USER.dashboardStatus?.topCards as Card[]) || [],

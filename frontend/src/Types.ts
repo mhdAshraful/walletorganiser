@@ -1,7 +1,7 @@
 export type Card = {
 	id: string;
 	type: "Credit" | "Debit";
-	brand: "Mastercard" | "VISA" | "DISCOVER"; // Add more brands if needed
+	brand: "Mastercard" | "VISA" | "DISCOVER"; // Extend with more brands if needed
 	lastFour: string;
 	expiry: string; // Format: "MM/YY"
 	isFavorite: boolean;
@@ -20,6 +20,7 @@ export type Transaction = {
 	currency: string; // Currency code like "AED", "USD", "AUD", etc.
 	totalAmount: number;
 	cardsUsed: CardUsage[];
+	category: string; // e.g., 'food', 'travel', 'shopping', etc.
 };
 
 export type TopMerchant = {
@@ -35,8 +36,21 @@ export type RecentOrder = {
 	amount: number;
 };
 
+export type MonthlyChartData = {
+	month: string; // e.g., "July", "August", ..., "December", "January"
+	splits: number; // Number of split-payment transactions that month
+	//totalTx?: number; // Optional: total transactions (if you want to show both)
+};
+
+export type TotalSplits = {
+	total: number; // Total split transactions across all time (or visible period)
+	monthlyData: MonthlyChartData[]; // Ordered: oldest → newest (July 2025 → January 2026)
+};
+
+
+
 export type DashboardStatus = {
-	totalSplits: number;
+	totalSplits: TotalSplits;
 	growthrate: number;
 	totalEarnings: number;
 	topCards: Card[]; // Reuses the Card export type
@@ -46,16 +60,16 @@ export type DashboardStatus = {
 
 export type User = {
 	id: string;
-	username: string;
 	firstName: string;
 	lastName: string;
+	username: string;
+	image?: string;
 	email: string;
 	password: string; // Note: In real apps, never store plain passwords!
-	image?: string;
-	recoveryCode?: string;
-	cards?: Card[];
-	transactions?: Transaction[];
-	dashboardStatus?: DashboardStatus;
+	recoveryCode: string;
+	cards: Card[];
+	transactions: Transaction[];
+	dashboardStatus: DashboardStatus;
 };
 
 export type AuthResponse = {
