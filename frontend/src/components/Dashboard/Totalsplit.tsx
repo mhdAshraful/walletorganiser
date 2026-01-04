@@ -26,13 +26,12 @@ export default function TotalsplitChart(
 	props: TotalsplitProps
 ): React.JSX.Element {
 	const { totalsplit } = props;
-	console.log("total split", totalsplit);
 
 	const chartData = totalsplit.monthlyData;
 	const chartConfig = {
 		splits: {
 			label: "Transactions",
-			color: "var(--chart-1)",
+			color: "var(--chart-5)",
 		},
 	} satisfies ChartConfig;
 
@@ -50,7 +49,7 @@ export default function TotalsplitChart(
 	return (
 		<Card className="@container/card">
 			<CardHeader>
-				<CardTitle className="flex flex-row justify-between text-2xl font-semibold tabular-nums @[250px]/card:text-2xl">
+				<CardTitle className="flex flex-row justify-between font-semibold tabular-nums @[250px]/card:text-lg">
 					<span>Total splits</span>
 					<span>{currentmonthsData?.splits}</span>
 				</CardTitle>
@@ -83,7 +82,7 @@ export default function TotalsplitChart(
 						<Line
 							dataKey="splits"
 							type="natural"
-							stroke="var(--chart-4)"
+							stroke="var(--chart-5)"
 							strokeWidth={2}
 							dot={false}
 						/>
