@@ -70,11 +70,11 @@ export const MOCK_USER = {
 			totalAmount: 298.89,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 206.02,
 				},
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 92.87,
 				},
 			],
@@ -88,7 +88,7 @@ export const MOCK_USER = {
 			totalAmount: 1969.78,
 			cardsUsed: [
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 1969.78,
 				},
 			],
@@ -102,11 +102,11 @@ export const MOCK_USER = {
 			totalAmount: 670.39,
 			cardsUsed: [
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 97.3,
 				},
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 573.09,
 				},
 			],
@@ -120,7 +120,7 @@ export const MOCK_USER = {
 			totalAmount: 337.34,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 337.34,
 				},
 			],
@@ -134,7 +134,7 @@ export const MOCK_USER = {
 			totalAmount: 1874.45,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 1874.45,
 				},
 			],
@@ -148,7 +148,7 @@ export const MOCK_USER = {
 			totalAmount: 1934.11,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 1934.11,
 				},
 			],
@@ -162,15 +162,15 @@ export const MOCK_USER = {
 			totalAmount: 319.33,
 			cardsUsed: [
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 233.77,
 				},
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 65.44,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 20.12,
 				},
 			],
@@ -184,11 +184,11 @@ export const MOCK_USER = {
 			totalAmount: 1019.38,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 735.97,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 283.41,
 				},
 			],
@@ -202,15 +202,15 @@ export const MOCK_USER = {
 			totalAmount: 29.2,
 			cardsUsed: [
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 4.36,
 				},
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 16.46,
 				},
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 8.38,
 				},
 			],
@@ -224,15 +224,15 @@ export const MOCK_USER = {
 			totalAmount: 1438.22,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 622.38,
 				},
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 569.55,
 				},
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 246.29,
 				},
 			],
@@ -246,7 +246,7 @@ export const MOCK_USER = {
 			totalAmount: 1235.82,
 			cardsUsed: [
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 1235.82,
 				},
 			],
@@ -260,7 +260,7 @@ export const MOCK_USER = {
 			totalAmount: 620.31,
 			cardsUsed: [
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 620.31,
 				},
 			],
@@ -274,7 +274,7 @@ export const MOCK_USER = {
 			totalAmount: 1578.12,
 			cardsUsed: [
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 1578.12,
 				},
 			],
@@ -288,11 +288,11 @@ export const MOCK_USER = {
 			totalAmount: 1041.91,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 652.97,
 				},
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 388.94,
 				},
 			],
@@ -306,7 +306,7 @@ export const MOCK_USER = {
 			totalAmount: 794.65,
 			cardsUsed: [
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 794.65,
 				},
 			],
@@ -320,7 +320,7 @@ export const MOCK_USER = {
 			totalAmount: 866.89,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 866.89,
 				},
 			],
@@ -334,7 +334,7 @@ export const MOCK_USER = {
 			totalAmount: 1752.17,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 1752.17,
 				},
 			],
@@ -348,15 +348,15 @@ export const MOCK_USER = {
 			totalAmount: 735.28,
 			cardsUsed: [
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 160.22,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 403.87,
 				},
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 171.19,
 				},
 			],
@@ -370,7 +370,7 @@ export const MOCK_USER = {
 			totalAmount: 1605.33,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 1605.33,
 				},
 			],
@@ -384,11 +384,11 @@ export const MOCK_USER = {
 			totalAmount: 1841.22,
 			cardsUsed: [
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 979.23,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 861.99,
 				},
 			],
@@ -402,7 +402,7 @@ export const MOCK_USER = {
 			totalAmount: 1177.49,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 1177.49,
 				},
 			],
@@ -416,11 +416,11 @@ export const MOCK_USER = {
 			totalAmount: 1047.94,
 			cardsUsed: [
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 399.26,
 				},
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 648.68,
 				},
 			],
@@ -434,7 +434,7 @@ export const MOCK_USER = {
 			totalAmount: 1639.93,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 1639.93,
 				},
 			],
@@ -448,15 +448,15 @@ export const MOCK_USER = {
 			totalAmount: 344.86,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 162.77,
 				},
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 49.84,
 				},
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 132.25,
 				},
 			],
@@ -470,7 +470,7 @@ export const MOCK_USER = {
 			totalAmount: 839.3,
 			cardsUsed: [
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 839.3,
 				},
 			],
@@ -484,11 +484,11 @@ export const MOCK_USER = {
 			totalAmount: 890.9,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 280.87,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 610.03,
 				},
 			],
@@ -502,7 +502,7 @@ export const MOCK_USER = {
 			totalAmount: 1593.64,
 			cardsUsed: [
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 1593.64,
 				},
 			],
@@ -516,7 +516,7 @@ export const MOCK_USER = {
 			totalAmount: 584.19,
 			cardsUsed: [
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 584.19,
 				},
 			],
@@ -530,7 +530,7 @@ export const MOCK_USER = {
 			totalAmount: 1609.32,
 			cardsUsed: [
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 1609.32,
 				},
 			],
@@ -544,11 +544,11 @@ export const MOCK_USER = {
 			totalAmount: 1484.5,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 680.83,
 				},
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 803.67,
 				},
 			],
@@ -562,7 +562,7 @@ export const MOCK_USER = {
 			totalAmount: 1370.98,
 			cardsUsed: [
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 1370.98,
 				},
 			],
@@ -576,15 +576,15 @@ export const MOCK_USER = {
 			totalAmount: 1291.3,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 622.35,
 				},
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 316.81,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 352.14,
 				},
 			],
@@ -598,7 +598,7 @@ export const MOCK_USER = {
 			totalAmount: 1373.42,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 1373.42,
 				},
 			],
@@ -612,7 +612,7 @@ export const MOCK_USER = {
 			totalAmount: 1429.02,
 			cardsUsed: [
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 1429.02,
 				},
 			],
@@ -626,7 +626,7 @@ export const MOCK_USER = {
 			totalAmount: 525.49,
 			cardsUsed: [
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 525.49,
 				},
 			],
@@ -640,7 +640,7 @@ export const MOCK_USER = {
 			totalAmount: 1548.95,
 			cardsUsed: [
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 1548.95,
 				},
 			],
@@ -654,11 +654,11 @@ export const MOCK_USER = {
 			totalAmount: 1516.31,
 			cardsUsed: [
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 749.49,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 766.82,
 				},
 			],
@@ -672,7 +672,7 @@ export const MOCK_USER = {
 			totalAmount: 452.28,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 452.28,
 				},
 			],
@@ -686,7 +686,7 @@ export const MOCK_USER = {
 			totalAmount: 449.71,
 			cardsUsed: [
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 449.71,
 				},
 			],
@@ -700,11 +700,11 @@ export const MOCK_USER = {
 			totalAmount: 933.43,
 			cardsUsed: [
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 648.25,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 285.18,
 				},
 			],
@@ -718,7 +718,7 @@ export const MOCK_USER = {
 			totalAmount: 202.42,
 			cardsUsed: [
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 202.42,
 				},
 			],
@@ -732,19 +732,19 @@ export const MOCK_USER = {
 			totalAmount: 950.42,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 515.71,
 				},
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 189.31,
 				},
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 99.52,
 				},
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 145.88,
 				},
 			],
@@ -758,15 +758,15 @@ export const MOCK_USER = {
 			totalAmount: 1595.28,
 			cardsUsed: [
 				{
-					cardLastFour: "6772",
+					lastFour: "6772",
 					amount: 721.04,
 				},
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 578.49,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 295.75,
 				},
 			],
@@ -780,7 +780,7 @@ export const MOCK_USER = {
 			totalAmount: 1533.84,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 1533.84,
 				},
 			],
@@ -794,11 +794,11 @@ export const MOCK_USER = {
 			totalAmount: 75.38,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 39.84,
 				},
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 35.54,
 				},
 			],
@@ -812,11 +812,11 @@ export const MOCK_USER = {
 			totalAmount: 1607.28,
 			cardsUsed: [
 				{
-					cardLastFour: "9644",
+					lastFour: "9644",
 					amount: 305.1,
 				},
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 1302.18,
 				},
 			],
@@ -830,7 +830,7 @@ export const MOCK_USER = {
 			totalAmount: 1340.15,
 			cardsUsed: [
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 1340.15,
 				},
 			],
@@ -844,7 +844,7 @@ export const MOCK_USER = {
 			totalAmount: 1551.96,
 			cardsUsed: [
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 1551.96,
 				},
 			],
@@ -858,15 +858,15 @@ export const MOCK_USER = {
 			totalAmount: 1932.25,
 			cardsUsed: [
 				{
-					cardLastFour: "9090",
+					lastFour: "9090",
 					amount: 1309.44,
 				},
 				{
-					cardLastFour: "0800",
+					lastFour: "0800",
 					amount: 378.35,
 				},
 				{
-					cardLastFour: "7432",
+					lastFour: "7432",
 					amount: 244.46,
 				},
 			],
@@ -880,7 +880,7 @@ export const MOCK_USER = {
 			totalAmount: 1651.36,
 			cardsUsed: [
 				{
-					cardLastFour: "7230",
+					lastFour: "7230",
 					amount: 1651.36,
 				},
 			],
@@ -924,45 +924,45 @@ export const MOCK_USER = {
 			{
 				name: "The Artisan's Nook",
 				value: 37,
-				color: "#6366f1",
+				fill: "#6366f1",
 			},
 			{
 				name: "Chic Finds",
 				value: 26,
-				color: "#a855f7",
+				fill: "#a855f7",
 			},
 			{
 				name: "Modern Marvels",
 				value: 21,
-				color: "#0ea5e9",
+				fill: "#0ea5e9",
 			},
 			{
 				name: "Amazon",
 				value: 9,
-				color: "#22c55e",
+				fill: "#22c55e",
 			},
 			{
 				name: "Grameenphone",
 				value: 7,
-				color: "#eab308",
+				fill: "#eab308",
 			},
 		],
 		recentOrders: [
 			{
 				id: "ORD-7X8Y9Z0A",
-				cardLast4: "4912",
+				lastFour: "4912",
 				currency: "AED",
 				amount: 215,
 			},
 			{
 				id: "ORD-7X8Y9Z0B",
-				cardLast4: "3746",
+				lastFour: "3746",
 				currency: "AED",
 				amount: 289,
 			},
 			{
 				id: "ORD-7X8Y9Z0C",
-				cardLast4: "6420",
+				lastFour: "6420",
 				currency: "AED",
 				amount: 456,
 			},

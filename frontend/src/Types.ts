@@ -9,7 +9,7 @@ export type Card = {
 };
 
 export type CardUsage = {
-	cardLastFour: string;
+	lastFour: string;
 	amount: number;
 };
 
@@ -26,12 +26,12 @@ export type Transaction = {
 export type TopMerchant = {
 	name: string;
 	value: number;
-	color: string;
+	fill: string;
 };
 
 export type RecentOrder = {
 	id: string;
-	cardLast4: string;
+	lastFour: string;
 	currency: string;
 	amount: number;
 };
@@ -47,7 +47,15 @@ export type TotalSplits = {
 	monthlyData: MonthlyChartData[]; // Ordered: oldest → newest (July 2025 → January 2026)
 };
 
-
+export type MostusedCards = {
+	id: string;
+	type: "Credit" | "Debit";
+	brand: string;
+	lastFour: string;
+	expiry: string;
+	isFavorite: boolean;
+	name: string;
+};
 
 export type DashboardStatus = {
 	totalSplits: TotalSplits;
