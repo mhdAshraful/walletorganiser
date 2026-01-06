@@ -1,14 +1,7 @@
 import React from "react";
 import { Pie, PieChart } from "recharts";
 
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
 	ChartContainer,
 	ChartTooltip,
@@ -17,40 +10,6 @@ import {
 } from "@/components/ui/chart";
 
 export const description = "A pie chart with no separator";
-
-// const chartData = [
-// 	{ browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-// 	{ browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-// 	{ browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-// 	{ browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-// 	{ browser: "other", visitors: 90, fill: "var(--color-other)" },
-// ];
-
-const chartConfig = {
-	visitors: {
-		label: "Visitors",
-	},
-	chrome: {
-		label: "Chrome",
-		color: "var(--chart-1)",
-	},
-	safari: {
-		label: "Safari",
-		color: "var(--chart-2)",
-	},
-	firefox: {
-		label: "Firefox",
-		color: "var(--chart-3)",
-	},
-	edge: {
-		label: "Edge",
-		color: "var(--chart-4)",
-	},
-	other: {
-		label: "Other",
-		color: "var(--chart-5)",
-	},
-} satisfies ChartConfig;
 
 type TopMerchentProps = {
 	topmerchants: {
@@ -69,6 +28,28 @@ function Topmerchents(props: TopMerchentProps): React.JSX.Element {
 		fill: merchant.fill,
 	}));
 
+	const chartConfig = {
+		"The Artisan's Nook": {
+			label: "The Artisan's Nook",
+			color: "#6366f1",
+		},
+		"Chic Finds": {
+			label: "Chic Finds",
+			color: "#a855f7",
+		},
+		"Modern Marvels": {
+			label: "Modern Marvels",
+			color: "#0ea5e9",
+		},
+		Amazon: {
+			label: "Amazon",
+			color: "#22c55e",
+		},
+		Grameenphone: {
+			label: "Grameenphone",
+			color: "#eab308",
+		},
+	} satisfies ChartConfig;
 	return (
 		<Card className="flex flex-col">
 			<CardHeader className="items-center ">

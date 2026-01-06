@@ -8,8 +8,7 @@ export type Card = {
 	name: string;
 };
 
-export type CardUsage = {
-	lastFour: string;
+export type CardUsage = Card & {
 	amount: number;
 };
 
@@ -19,6 +18,7 @@ export type Transaction = {
 	date: string; // ISO date string, e.g., "2025-12-20T12:00:00"
 	currency: string; // Currency code like "AED", "USD", "AUD", etc.
 	totalAmount: number;
+	numberOfCards: number;
 	cardsUsed: CardUsage[];
 	category: string; // e.g., 'food', 'travel', 'shopping', etc.
 };

@@ -20,6 +20,7 @@ import {
 type TotalsplitProps = {
 	totalsplit: TotalSplits;
 	growthrate?: number;
+	totalmixedPayments?: number;
 };
 
 export default function TotalsplitChart(
@@ -35,23 +36,12 @@ export default function TotalsplitChart(
 		},
 	} satisfies ChartConfig;
 
-	// Setting data for current months
-	const now = new Date();
-	const currentMonthYear =
-		now.toLocaleString("default", { month: "short" }) +
-		now.getFullYear().toString().slice(-2); // gives "Jan26"
-
-	// filter current monts data
-	const currentmonthsData = totalsplit.monthlyData.find(
-		(data) => data.month.toLowerCase() === currentMonthYear.toLowerCase()
-	);
-
 	return (
 		<Card className="@container/card">
 			<CardHeader>
 				<CardTitle className="flex flex-row justify-between font-semibold tabular-nums @[250px]/card:text-lg">
 					<span>Total splits</span>
-					<span>{currentmonthsData?.splits}</span>
+					<span>{props.totalmixedPayments}</span>
 				</CardTitle>
 				<CardDescription>
 					{props.growthrate}% up from last month{" "}

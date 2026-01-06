@@ -1,11 +1,13 @@
+import { gettotalSplitsCurrentMonth } from "@/lib/SplitCalculations";
+import type { TotalSplits } from "@/Types";
 import React from "react";
 type DashboardHeaderProps = {
 	firstName: string;
-	numberofSplits?: number;
+	splitdata: TotalSplits;
 };
 function DashboardHeader({
 	firstName,
-	numberofSplits,
+	splitdata,
 }: DashboardHeaderProps): React.JSX.Element {
 	return (
 		<div>
@@ -14,9 +16,9 @@ function DashboardHeader({
 			</h1>
 			<p className="text-slate-600">
 				You have completed{" "}
-				{(numberofSplits ?? 0) > 1
-					? numberofSplits + " splits"
-					: (numberofSplits ?? 0) + " split"}{" "}
+				{(gettotalSplitsCurrentMonth(splitdata) ?? 0) > 1
+					? gettotalSplitsCurrentMonth(splitdata) + " splits"
+					: (gettotalSplitsCurrentMonth(splitdata) ?? 0) + " split"}{" "}
 				this month! Make the most out of your cards.
 			</p>
 		</div>
