@@ -1,4 +1,3 @@
-import React from "react";
 import type { Transaction } from "@/Types";
 import {
 	flexRender,
@@ -74,7 +73,7 @@ export const column: ColumnDef<Transaction>[] = [
 	},
 ];
 
-function AverageSplits(props: { transactions?: Transaction[] }) {
+function AverageSplits(props: TransactionProps) {
 	const table = useReactTable({
 		data: props.transactions || [],
 		columns: column,
