@@ -1,4 +1,3 @@
-import React from "react";
 import type { Transaction } from "@/Types";
 import {
 	flexRender,
@@ -21,11 +20,24 @@ type TransactionProps = {
 
 export const column: ColumnDef<Transaction>[] = [
 	{
-		accessorKey: "merchant",
-		header: "Merchant",
-		cell: ({ row }) => (
-			<div className="font-medium">{row.getValue("merchant")}</div>
-		),
+		accessorKey: "date",
+		header: "Date",
+		cell: ({ row }) => {
+			const date = new Date(
+				(row.original as any).createdAt ?? (row.original as any).date
+			);
+			const options: Intl.DateTimeFormatOptions = {
+				year: "numeric",
+				month: "short",
+				day: "numeric",
+			};
+			return <div>{date.toLocaleDateString(undefined, options)}</div>;
+		},
+	},
+
+	{
+		accessorKey: "id",
+		header: "Order ID",
 	},
 
 	{
@@ -48,6 +60,12 @@ export const column: ColumnDef<Transaction>[] = [
 			<div className="text-center">{row.getValue("numberOfCards")}</div>
 		),
 	},
+	{
+		accessorKey: "currency",
+		header: "Currency",
+		cell: ({ row }) => <div className="">{row.getValue("currency")}</div>,
+	},
+
 	// {
 	// 	accessorKey: "cardsUsed",
 	// 	header: "Card Details",
@@ -65,18 +83,27 @@ export const column: ColumnDef<Transaction>[] = [
 	// 		);
 	// 	},
 	// },
-	{
-		accessorKey: "category",
-		header: "Category",
-		cell: ({ row }) => (
-			<div className="capitalize">{row.getValue("category")}</div>
-		),
-	},
+	// {
+	// 	accessorKey: "category",
+	// 	header: "Category",
+	// 	cell: ({ row }) => (
+	// 		<div className="capitalize">{row.getValue("category")}</div>
+	// 	),
+	// },
 ];
 
-function RecentOrders(props: { transactions?: Transaction[] }) {
+function RecentOrders(props: TransactionProps) {
 	const table = useReactTable({
-		data: props.transactions || [],
+		data:
+			props.transactions?.filter((trx) => {
+				const date = new Date((trx as any).createdAt ?? (trx as any).date);
+				if (Number.isNaN(date.getTime())) return false;
+				const month = date.getMonth(); // 0 = Jan, 11 = Dec
+				const year = date.getFullYear();
+				return (
+					(year === 2025 && month === 11) || (year === 2026 && month === 0)
+				);
+			}) || [],
 		columns: column,
 		getCoreRowModel: getCoreRowModel(),
 	});
@@ -85,7 +112,7 @@ function RecentOrders(props: { transactions?: Transaction[] }) {
 		// <div className="overflow-hidden rounded-3xl border ">
 		<Card className="@container/card overflow-scroll rounded-3xl max-h-95 ">
 			<CardHeader>
-				<h2 className="text-lg font-semibold">Average Splits</h2>
+				<h2 className="text-lg font-semibold">Recent Orders</h2>
 			</CardHeader>
 			<CardContent className="p-0 m-0">
 				<Table>

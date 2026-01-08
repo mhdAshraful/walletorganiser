@@ -21,13 +21,29 @@ type TransactionProps = {
 
 export const column: ColumnDef<Transaction>[] = [
 	{
-		accessorKey: "merchant",
-		header: "Merchant",
-		cell: ({ row }) => (
-			<div className="font-medium">{row.getValue("merchant")}</div>
-		),
-	},
+		accessorKey: "cardsUsed",
+		header: "Card",
+		cell: ({ row }) => {
+			const cards = row.original.cardsUsed;
+			console.log(cards[0].brand + " **** " + cards[0].lastFour);
 
+			return (
+				<div className="flex flex-row items-center gap-2 font-medium">
+					{cards[0].brand === "VISA" ? (
+						<img src="visa.svg" alt="visa card" className="w-8 h-8" />
+					) : (
+						<img
+							src="master.png"
+							alt="mastercard"
+							className="w-8 h-5.3"
+						/>
+					)}{" "}
+					****
+					{cards[0].lastFour}
+				</div>
+			);
+		},
+	},
 	{
 		accessorKey: "totalAmount",
 		header: "Total Amount",
@@ -48,23 +64,7 @@ export const column: ColumnDef<Transaction>[] = [
 			<div className="text-center">{row.getValue("numberOfCards")}</div>
 		),
 	},
-	// {
-	// 	accessorKey: "cardsUsed",
-	// 	header: "Card Details",
-	// 	cell: ({ row }) => {
-	// 		const cards = row.original.cardsUsed;
-	// 		return (
-	// 			<div className="flex flex-col gap-1">
-	// 				{cards.map((card, index) => (
-	// 					<div key={index} className="text-sm">
-	// 						{card.brand} •••• {card.lastFour} - {row.original.currency}{" "}
-	// 						{card.amount.toFixed(2)}
-	// 					</div>
-	// 				))}
-	// 			</div>
-	// 		);
-	// 	},
-	// },
+
 	{
 		accessorKey: "category",
 		header: "Category",
@@ -82,7 +82,6 @@ function AverageSplits(props: { transactions?: Transaction[] }) {
 	});
 
 	return (
-		// <div className="overflow-hidden rounded-3xl border ">
 		<Card className="@container/card overflow-scroll rounded-3xl max-h-95 ">
 			<CardHeader>
 				<h2 className="text-lg font-semibold">Average Splits</h2>
@@ -122,7 +121,6 @@ function AverageSplits(props: { transactions?: Transaction[] }) {
 				</Table>
 			</CardContent>
 		</Card>
-		// </div>
 	);
 }
 

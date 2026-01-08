@@ -1,7 +1,6 @@
 import { useState, useMemo } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
 	Field,
 	FieldDescription,
@@ -100,11 +99,11 @@ function EmailStep() {
 						Start paying with multiple cards online
 					</p>
 				</div>
-				<p className="text-muted-foreground text-center text-2xl">
+				<p className="text-muted-foreground text-center text-xs">
 					{" "}
-					<span className="text-amber-500"> To login</span> You can use any{" "}
-					<span className="text-blue-400">username</span>And{" "}
-					<span className="text-blue-400"> password</span> from this link{" "}
+					<span className="text-amber-800"> To login</span> You can also
+					use any <span className="text-blue-600">username</span>And{" "}
+					<span className="text-blue-600"> password</span> from this link{" "}
 					<a href="https://dummyjson.com/users" target="_blank">
 						https://dummyjson.com/users
 					</a>
@@ -553,22 +552,19 @@ export function SignupForm({
 
 	return (
 		<div className={cn("flex flex-col gap-6", className)} {...props}>
-			<Card className="overflow-hidden p-0">
-				<CardContent className="grid p-0 md:grid-cols-2">
-					<div className="p-6 md:p-8">
-						{currentStep === 1 && <EmailStep />}
-						{currentStep === 2 && <PasswordStep />}
-						{currentStep === 3 && <NameStep />}
-					</div>
-					<div className="bg-muted relative hidden md:block">
-						<img
-							src="/placeholder.svg"
-							alt="Signup illustration"
-							className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-						/>
-					</div>
-				</CardContent>
-			</Card>
+			<div className="p-6 md:p-8">
+				{currentStep === 1 && <EmailStep />}
+				{currentStep === 2 && <PasswordStep />}
+				{currentStep === 3 && <NameStep />}
+			</div>
+			<div className="bg-muted relative hidden md:block">
+				<img
+					src="/placeholder.svg"
+					alt="Signup illustration"
+					className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+				/>
+			</div>
+
 			<FieldDescription className="px-6 text-center">
 				By clicking continue, you agree to our{" "}
 				<a

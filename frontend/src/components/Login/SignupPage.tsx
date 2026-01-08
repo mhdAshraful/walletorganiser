@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
-import { LoginForm } from "./LoginForm";
+import { SignupForm } from "./SignupForm";
 
-export default function LoginPage() {
+export function SignupPage() {
 	return (
 		<div className="grid min-h-svh lg:grid-cols-2">
 			<div className="flex flex-col gap-4 p-6 md:p-10">
@@ -20,8 +20,8 @@ export default function LoginPage() {
 				</NavLink>
 
 				<div className="flex flex-1 items-center  justify-center">
-					<div className="w-full max-w-2/3 ">
-						<LoginForm />
+					<div className="w-full max-w-2/3">
+						<SignupForm />
 					</div>
 				</div>
 			</div>

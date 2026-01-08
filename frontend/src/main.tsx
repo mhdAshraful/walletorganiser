@@ -4,7 +4,7 @@ import "./global.css";
 import App from "./App.tsx";
 import { BrowserRouter, Route, Routes } from "react-router";
 
-import { SignupForm } from "./components/Login/SignupForm.tsx";
+import { SignupPage } from "./components/Login/SignupPage.tsx";
 import { ProtectedRoute } from "./components/Login/ProtectedRoute.tsx";
 import Settings from "./components/NavSideBars/Settings.tsx";
 import DashboardPage from "./components/Dashboard/DashboardPage.tsx";
@@ -25,7 +25,7 @@ async function init() {
 				<Routes>
 					{/* Public routes */}
 					<Route path="login" element={<LoginPage />} />
-					<Route path="signup" element={<SignupForm />} />
+					<Route path="signup" element={<SignupPage />} />
 					<Route path="payment-preview" element={<> payment element</>} />
 					{/* Protected routes */}
 					<Route element={<ProtectedRoute />}>
