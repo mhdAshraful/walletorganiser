@@ -20,9 +20,9 @@ function SidebarFooterContent(): React.JSX.Element {
 						<img
 							src="logout_icon.svg"
 							alt="Logout Icon"
-							className="w-6 h-6 mr-0"
+							className="w-6 h-6 mr-2"
 						/>
-						<span>Logout</span>
+						<span className="text-destructive">Logout</span>
 					</SidebarMenuButton>
 				</SidebarMenuItem>
 			</Collapsible>

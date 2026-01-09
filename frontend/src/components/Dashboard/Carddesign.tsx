@@ -1,8 +1,14 @@
-import React from "react";
+import React, { type JSX } from "react";
 import { cn } from "@/lib/utils";
+import type { CardUsage } from "@/Types";
 
-function CardDesign() {
+type CardDesignProps = {
+	uniqueCards: CardUsage[];
+};
+
+function CardDesign(props: CardDesignProps): JSX.Element {
 	// palette of six Tailwind background class combinations
+	const { uniqueCards } = props;
 	const COLORS = [
 		"bg-gradient-to-t from-blue-800 to-indigo-900 text-white",
 		"bg-gradient-to-r from-emerald-500 to-emerald-900 text-white",
@@ -12,16 +18,19 @@ function CardDesign() {
 		"bg-gradient-to-r from-emerald-500 to-emerald-900 text-white",
 	];
 
-	const color = COLORS[Math.floor(Math.random() * COLORS.length)];
-
 	return (
-		<CardFrame
-			className="flex flex-col justify-between p-4"
-			color={color}
-			brand="discover"
-			exp="12/24"
-			lastFour="1234"
-		/>
+		<>
+			{uniqueCards.map((card, index) => (
+				<CardFrame
+					className="flex flex-col justify-between p-4"
+					color={COLORS[index % COLORS.length] || COLORS[0]}
+					brand={card.brand}
+					exp={card.expiry}
+					lastFour={card.lastFour}
+					key={index}
+				/>
+			))}
+		</>
 	);
 }
 

@@ -71,13 +71,7 @@ function DashboardPage() {
 								@5xl/main:grid-cols-5
 								"
 				>
-					{/* <RecentusedCards /> */}
-
-					<CardDesign />
-					<CardDesign />
-					<CardDesign />
-					<CardDesign />
-					<CardDesign />
+					<RecentusedCards transactions={user?.transactions} />
 				</div>
 			</div>
 		</div>

@@ -10,6 +10,7 @@ import Settings from "./components/NavSideBars/Settings.tsx";
 import DashboardPage from "./components/Dashboard/DashboardPage.tsx";
 import LoginPage from "./components/Login/LoginPage.tsx";
 import { UnderConstruction } from "./components/Underconstructions.tsx";
+import CardPage from "./components/Cards/CardPage.tsx";
 
 async function init() {
 	// Start MSW in development only so local API calls are intercepted.
