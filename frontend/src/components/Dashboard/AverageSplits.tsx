@@ -24,7 +24,7 @@ export const column: ColumnDef<Transaction>[] = [
 		header: "Card",
 		cell: ({ row }) => {
 			const cards = row.original.cardsUsed;
-			console.log(cards[0].brand + " **** " + cards[0].lastFour);
+			// console.log(cards[0].brand + " **** " + cards[0].lastFour);
 
 			return (
 				<div className="flex flex-row items-center gap-2 font-medium">

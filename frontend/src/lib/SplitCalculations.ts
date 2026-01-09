@@ -10,7 +10,7 @@ export const gettotalSplitsCurrentMonth = (obj: TotalSplits) => {
 	const currentmonthsData = obj.monthlyData.find(
 		(data) => data.month.toLowerCase() === currentMonthYear.toLowerCase()
 	);
-	console.log("You got splits for current month:", currentmonthsData?.month);
+	// console.log("You got splits for current month:", currentmonthsData?.month);
 
 	return currentmonthsData?.splits || 0;
 };

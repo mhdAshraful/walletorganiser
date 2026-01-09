@@ -9,6 +9,7 @@ import { ProtectedRoute } from "./components/Login/ProtectedRoute.tsx";
 import Settings from "./components/NavSideBars/Settings.tsx";
 import DashboardPage from "./components/Dashboard/DashboardPage.tsx";
 import LoginPage from "./components/Login/LoginPage.tsx";
+import { UnderConstruction } from "./components/Underconstructions.tsx";
 
 async function init() {
 	// Start MSW in development only so local API calls are intercepted.
@@ -26,22 +27,22 @@ async function init() {
 					{/* Public routes */}
 					<Route path="login" element={<LoginPage />} />
 					<Route path="signup" element={<SignupPage />} />
-					<Route path="payment-preview" element={<> payment element</>} />
+					<Route path="payment-preview" element={<UnderConstruction />} />
 					{/* Protected routes */}
 					<Route element={<ProtectedRoute />}>
 						<Route path="/" element={<App />}>
 							<Route index element={<DashboardPage />} />
-							<Route path="cards" element={<> cards element</>} />
-							<Route path="orders" element={<> orders element</>} />
-							<Route path="support" element={<> support element</>} />
+							<Route path="cards" element={<UnderConstruction />} />
+							<Route path="orders" element={<UnderConstruction />} />
+							<Route path="support" element={<UnderConstruction />} />
 							<Route path="settings" element={<Settings />} />
 							<Route
 								path="notifications"
-								element={<> notifications element</>}
+								element={<UnderConstruction />}
 							/>
 							<Route
 								path="userprofile"
-								element={<> userprofile element</>}
+								element={<UnderConstruction />}
 							/>
 						</Route>
 					</Route>

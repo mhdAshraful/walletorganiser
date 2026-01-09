@@ -5,6 +5,8 @@ import MostusedcardsChart from "./MostusedCards";
 import Topmerchents from "./Topmerchents";
 import AverageSplits from "./AverageSplits";
 import RecentOrders from "./RecentOrders";
+import RecentusedCards from "./RecentusedCards";
+import CardDesign from "./Carddesign";
 
 function DashboardPage() {
 	const user: User = localStorage.getItem("user")
@@ -59,18 +61,25 @@ function DashboardPage() {
 			</div>
 
 			{/* Recently Used Cards */}
-			<div
-				className="grid grid-cols-1 gap-4 p-4 lg:px-4
-                        @xl/main:grid-cols-2
-                        @5xl/main:grid-cols-2
-                        *:data-[slot=card]:bg-liner-to-t
-                        *:data-[slot=card]:from-primary/5
-                        *:data-[slot=card]:to-card
-                        dark:*:data-[slot=card]:bg-card
-                        *:data-[slot=card]:shadow-xs
-						
-						"
-			></div>
+			<div>
+				<h2 className="px-4 pt-4 text-lg font-semibold">
+					Recently Used Cards
+				</h2>
+				<div
+					className="grid grid-cols-2 gap-4 p-4 lg:px-4
+								@xl/main:grid-cols-3
+								@5xl/main:grid-cols-5
+								"
+				>
+					{/* <RecentusedCards /> */}
+
+					<CardDesign />
+					<CardDesign />
+					<CardDesign />
+					<CardDesign />
+					<CardDesign />
+				</div>
+			</div>
 		</div>
 	);
 }

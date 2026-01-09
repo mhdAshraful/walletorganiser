@@ -26,24 +26,24 @@ type UsedcardProps = {
 export default function MostusedcardsChart(
 	props: UsedcardProps
 ): React.JSX.Element {
-	console.log("topcards:", props.topcards);
-	console.log("transactions:", props.transactions);
-	console.log(
-		"First transaction cardsUsed:",
-		props.transactions?.[0]?.cardsUsed
-	);
+	// console.log("topcards:", props.topcards);
+	// console.log("transactions:", props.transactions);
+	// console.log(
+	// 	"First transaction cardsUsed:",
+	// 	props.transactions?.[0]?.cardsUsed
+	// );
 
-	console.log(
-		"topcards lastFour values:",
-		props.topcards?.map((c) => c.lastFour)
-	);
-	console.log("All unique lastFour in transactions:", [
-		...new Set(
-			props.transactions?.flatMap((tx) =>
-				tx.cardsUsed.map((c) => c.lastFour)
-			)
-		),
-	]);
+	// console.log(
+	// 	"topcards lastFour values:",
+	// 	props.topcards?.map((c) => c.lastFour)
+	// );
+	// console.log("All unique lastFour in transactions:", [
+	// 	...new Set(
+	// 		props.transactions?.flatMap((tx) =>
+	// 			tx.cardsUsed.map((c) => c.lastFour)
+	// 		)
+	// 	),
+	// ]);
 
 	// const chartData = props.topcards.map((card) => ({
 	// 	brand: card.brand,
@@ -57,10 +57,10 @@ export default function MostusedcardsChart(
 		const matchingTxs = props.transactions.filter((tx) =>
 			tx.cardsUsed.some((c) => c.lastFour === card.lastFour)
 		);
-		console.log(
-			`Card ${card.lastFour}: found ${matchingTxs.length} transactions`,
-			matchingTxs
-		);
+		// console.log(
+		// 	`Card ${card.lastFour}: found ${matchingTxs.length} transactions`,
+		// 	matchingTxs
+		// );
 
 		return {
 			brand: card.brand + " ****" + card.lastFour,
