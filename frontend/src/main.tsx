@@ -33,7 +33,8 @@ async function init() {
 					<Route element={<ProtectedRoute />}>
 						<Route path="/" element={<App />}>
 							<Route index element={<DashboardPage />} />
-							<Route path="cards" element={<UnderConstruction />} />
+							<Route path="cards" element={<CardPage />} />
+							{/* <Route path="cards" element={<UnderConstruction />} /> */}
 							<Route path="orders" element={<UnderConstruction />} />
 							<Route path="support" element={<UnderConstruction />} />
 							<Route path="settings" element={<Settings />} />
