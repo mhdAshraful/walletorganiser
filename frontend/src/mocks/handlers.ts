@@ -1,4 +1,5 @@
 import { http, HttpResponse } from "msw";
+import type { Card } from "../Types";
 import { MOCK_USER } from "../store/MockData";
 
 export const handlers = [
@@ -7,13 +8,17 @@ export const handlers = [
 		const { email, password } = (await request.json()) as any;
 
 		if (email === MOCK_USER.email && password === MOCK_USER.password) {
+			const [firstName = "", ...lastNameParts] = (
+				MOCK_USER.name || ""
+			).split(" ");
+			const lastName = lastNameParts.join(" ");
 			return HttpResponse.json({
 				token: "Some_Fake_JWT_TOKEN",
 				user: {
 					id: MOCK_USER.id,
-					username: MOCK_USER.username,
-					firstName: MOCK_USER.firstName,
-					lastName: MOCK_USER.lastName,
+					username: MOCK_USER.email,
+					firstName,
+					lastName,
 					email: MOCK_USER.email,
 				},
 			});
@@ -88,18 +93,30 @@ export const handlers = [
 	// --- CARDS: CREATE (Add a card) ---
 	http.post("/api/cards", async ({ request }) => {
 		const newCardData = (await request.json()) as any;
+		const brandMap: Record<string, Card["brand"]> = {
+			mastercard: "Mastercard",
+			visa: "VISA",
+			discover: "DISCOVER",
+		};
+		const normalizedBrand = String(
+			newCardData?.brand || "visa",
+		).toLowerCase();
+		const brand: Card["brand"] = brandMap[normalizedBrand] ?? "VISA";
+		const rawType = String(newCardData?.type || "Debit");
+		const type: Card["type"] = rawType === "Credit" ? "Credit" : "Debit";
 
 		// 1. Simulate "Tokenization" (Network delay)
 		await new Promise((resolve) => setTimeout(resolve, 1000));
 
 		// 2. Create the new card object
-		const newCard = {
+		const newCard: Card = {
 			id: `c${Date.now()}`, // Generate a random ID
-			type: newCardData.brand || "Visa",
-			cardLast4: newCardData.cardNumber.slice(-4), // Take last 4 digits
-			brand: "Debit", // Default for demo
-			expiry: newCardData.expiry, // Default expiry
-			usage: 0, // New cards have 0 usage
+			type,
+			brand,
+			lastFour: String(newCardData?.cardNumber || "0000").slice(-4),
+			expiry: newCardData?.expiry || "01/30",
+			isFavorite: false,
+			name: newCardData?.name || "New Card",
 		};
 
 		// 3. "SAVE" it to our mock database array

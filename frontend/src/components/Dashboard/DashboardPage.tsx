@@ -6,7 +6,7 @@ import Topmerchents from "./Topmerchents";
 import AverageSplits from "./AverageSplits";
 import RecentOrders from "./RecentOrders";
 import RecentusedCards from "./RecentusedCards";
-import CardDesign from "./Carddesign";
+
 
 function DashboardPage() {
 	const user: User = localStorage.getItem("user")

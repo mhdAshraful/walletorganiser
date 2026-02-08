@@ -1,7 +1,6 @@
 import { type Transaction } from "@/Types";
 import { type JSX } from "react";
 import CardDesign from "./Carddesign";
-import RecentOrders from "./RecentOrders";
 
 type TransactionProps = {
 	transactions?: Transaction[];

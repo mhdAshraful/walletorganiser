@@ -1,5 +1,16 @@
+import type { Card, DashboardStatus, Transaction } from "../Types";
+
 // This is to show in dummy UI
-export const MOCK_USER = {
+export const MOCK_USER: {
+	id: string;
+	name: string;
+	email: string;
+	password: string;
+	recoveryCode: string;
+	cards: Card[];
+	transactions: Transaction[];
+	dashboardStatus: DashboardStatus;
+} = {
 	id: "user_01",
 	name: "Administrator",
 	email: "admin@example.com",
